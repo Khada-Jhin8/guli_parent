@@ -17,6 +17,16 @@
             <version>1.5.13</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>vip.zhguo</groupId>
+            <artifactId>common_utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>vip.zhguo</groupId>
+            <artifactId>service_base</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <properties>

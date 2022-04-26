@@ -1,9 +1,11 @@
 package vip.zhguo.eduservice.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import vip.zhguo.commonutils.R;
 import vip.zhguo.eduservice.entity.EduTeacher;
 import vip.zhguo.eduservice.service.EduTeacherService;
 
@@ -25,16 +27,25 @@ public class EduTeacherController {
     EduTeacherService eduTeacherService;
 
     @GetMapping
-    public List getTeachers() {
+    public R getTeachers() {
         List<EduTeacher> list = eduTeacherService.list(null);
-        return list;
+        return R.ok().data("data", list);
     }
 
 
     @DeleteMapping("/{id}")
-    public boolean deleteById(@PathVariable String id){
+    public R deleteById(@PathVariable String id) {
         boolean flag = eduTeacherService.removeById(id);
-        return flag;
+        if (flag)
+            return R.ok();
+        return R.error();
+    }
+
+    @GetMapping("/pageTeacher/{current}/{limit}")
+    public R getPageTeacher(@PathVariable long current, @PathVariable long limit) {
+        Page<EduTeacher> eduTeachers = new Page<EduTeacher>(current, limit);
+        IPage<EduTeacher> page = eduTeacherService.page(eduTeachers, null);
+        return R.ok().data("data", page);
     }
 
 }
