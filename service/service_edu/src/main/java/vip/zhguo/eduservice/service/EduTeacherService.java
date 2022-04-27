@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2022-04-25
  */
 public interface EduTeacherService extends IService<EduTeacher> {
+    
 
 }

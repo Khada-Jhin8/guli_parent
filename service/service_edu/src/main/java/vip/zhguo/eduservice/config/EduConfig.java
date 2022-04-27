@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @createTime : [2022/4/25 13:56]
  */
 @Configuration
-@MapperScan("vip.zhenghg.eduservice.mapper")
+@MapperScan("vip.zhguo.eduservice.mapper")
 public class EduConfig {
     /*设置逻辑删除*/
     @Bean

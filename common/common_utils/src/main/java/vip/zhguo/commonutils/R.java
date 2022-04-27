@@ -23,8 +23,8 @@ public class R {
     private String message;
 
     @ApiModelProperty(value = "返回数据")
-    private Map<String, Object> data = new HashMap<String, Object>();
-
+//    private Map<String, Object> data = new HashMap<String, Object>();
+    private Object data;
     private R() {
     }
 
@@ -59,13 +59,17 @@ public class R {
         return this;
     }
 
-    public R data(String key, Object value) {
-        this.data.put(key, value);
-        return this;
-    }
-
-    public R data(Map<String, Object> map) {
-        this.setData(map);
+//    public R data(String key, Object value) {
+//        this.data.put(key, value);
+//        return this;
+//    }
+//
+//    public R data(Map<String, Object> map) {
+//        this.setData(map);
+//        return this;
+//    }
+    public R data(Object data){
+        this.setData(data);
         return this;
     }
 }

@@ -2,8 +2,8 @@ server:
   port: 8001
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-#  mapper-locations: D:\IdeaProjects\guli_parent\service\service_edu\src\main\java\vip\zhenghg\eduservice\mapper\xml\EduTeacherMapper.xml
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  #      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       logic-delete-value: 1
