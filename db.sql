@@ -44,13 +44,13 @@ INSERT INTO `acl_permission` VALUES ('111', '11', '', '0', null, null, null, nul
 INSERT INTO `acl_permission` VALUES ('1111', '111', '', '0', null, null, null, null, null, '0', null, null);
 INSERT INTO `acl_permission` VALUES ('11111', '1111', '', '0', null, null, null, null, null, '0', null, null);
 INSERT INTO `acl_permission` VALUES ('1195268474480156673', '1', '权限管理', '1', null, '/acl', 'Layout', null, null, '0', '2019-11-15 17:13:06', '2019-11-18 13:54:25');
-INSERT INTO `acl_permission` VALUES ('1195268616021139457', '1195268474480156673', '用户管理', '1', null, 'user/list', '/acl/user/list', null, null, '0', '2019-11-15 17:13:40', '2019-11-18 13:53:12');
+INSERT INTO `acl_permission` VALUES ('1195268616021139457', '1195268474480156673', '用户管理', '1', null, 'checkUser/list', '/acl/checkUser/list', null, null, '0', '2019-11-15 17:13:40', '2019-11-18 13:53:12');
 INSERT INTO `acl_permission` VALUES ('1195268788138598401', '1195268474480156673', '角色管理', '1', null, 'role/list', '/acl/role/list', null, null, '0', '2019-11-15 17:14:21', '2019-11-15 17:14:21');
 INSERT INTO `acl_permission` VALUES ('1195268893830864898', '1195268474480156673', '菜单管理', '1', null, 'menu/list', '/acl/menu/list', null, null, '0', '2019-11-15 17:14:46', '2019-11-15 17:14:46');
-INSERT INTO `acl_permission` VALUES ('1195269143060602882', '1195268616021139457', '查看', '2', 'user.list', '', '', null, null, '0', '2019-11-15 17:15:45', '2019-11-17 21:57:16');
-INSERT INTO `acl_permission` VALUES ('1195269295926206466', '1195268616021139457', '添加', '2', 'user.add', 'user/add', '/acl/user/form', null, null, '0', '2019-11-15 17:16:22', '2019-11-15 17:16:22');
-INSERT INTO `acl_permission` VALUES ('1195269473479483394', '1195268616021139457', '修改', '2', 'user.update', 'user/update/:id', '/acl/user/form', null, null, '0', '2019-11-15 17:17:04', '2019-11-15 17:17:04');
-INSERT INTO `acl_permission` VALUES ('1195269547269873666', '1195268616021139457', '删除', '2', 'user.remove', '', '', null, null, '0', '2019-11-15 17:17:22', '2019-11-15 17:17:22');
+INSERT INTO `acl_permission` VALUES ('1195269143060602882', '1195268616021139457', '查看', '2', 'checkUser.list', '', '', null, null, '0', '2019-11-15 17:15:45', '2019-11-17 21:57:16');
+INSERT INTO `acl_permission` VALUES ('1195269295926206466', '1195268616021139457', '添加', '2', 'checkUser.add', 'checkUser/add', '/acl/checkUser/form', null, null, '0', '2019-11-15 17:16:22', '2019-11-15 17:16:22');
+INSERT INTO `acl_permission` VALUES ('1195269473479483394', '1195268616021139457', '修改', '2', 'checkUser.update', 'checkUser/update/:id', '/acl/checkUser/form', null, null, '0', '2019-11-15 17:17:04', '2019-11-15 17:17:04');
+INSERT INTO `acl_permission` VALUES ('1195269547269873666', '1195268616021139457', '删除', '2', 'checkUser.remove', '', '', null, null, '0', '2019-11-15 17:17:22', '2019-11-15 17:17:22');
 INSERT INTO `acl_permission` VALUES ('1195269821262782465', '1195268788138598401', '修改', '2', 'role.update', 'role/update/:id', '/acl/role/form', null, null, '0', '2019-11-15 17:18:27', '2019-11-15 17:19:53');
 INSERT INTO `acl_permission` VALUES ('1195269903542444034', '1195268788138598401', '查看', '2', 'role.list', '', '', null, null, '0', '2019-11-15 17:18:47', '2019-11-15 17:18:47');
 INSERT INTO `acl_permission` VALUES ('1195270037005197313', '1195268788138598401', '添加', '2', 'role.add', 'role/add', '/acl/role/form', null, null, '0', '2019-11-15 17:19:19', '2019-11-18 11:05:42');
@@ -92,7 +92,7 @@ INSERT INTO `acl_permission` VALUES ('1195353672110673921', '1195353513549205505
 INSERT INTO `acl_permission` VALUES ('1195354076890370050', '1', '订单管理', '1', null, '/order', 'Layout', null, null, '0', '2019-11-15 22:53:15', '2019-11-15 22:53:15');
 INSERT INTO `acl_permission` VALUES ('1195354153482555393', '1195354076890370050', '订单列表', '1', null, 'list', '/order/list', null, null, '0', '2019-11-15 22:53:33', '2019-11-15 22:53:58');
 INSERT INTO `acl_permission` VALUES ('1195354315093282817', '1195354153482555393', '查看', '2', 'order.list', '', '', null, null, '0', '2019-11-15 22:54:12', '2019-11-15 22:54:12');
-INSERT INTO `acl_permission` VALUES ('1196301740985311234', '1195268616021139457', '分配角色', '2', 'user.assgin', 'user/role/:id', '/acl/user/roleForm', null, null, '0', '2019-11-18 13:38:56', '2019-11-18 13:38:56');
+INSERT INTO `acl_permission` VALUES ('1196301740985311234', '1195268616021139457', '分配角色', '2', 'checkUser.assgin', 'checkUser/role/:id', '/acl/checkUser/roleForm', null, null, '0', '2019-11-18 13:38:56', '2019-11-18 13:38:56');
 
 -- ----------------------------
 -- Table structure for acl_role

@@ -25,7 +25,7 @@ import java.util.List;
  * @since 2022-04-25
  */
 @SuppressWarnings("all")
-
+@CrossOrigin
 @RestController
 @RequestMapping("/eduservice/eduteacher")
 @ApiModel("讲师类接口")
@@ -37,7 +37,6 @@ public class EduTeacherController {
     @ApiOperation("获取所有教师")
     public R getTeachers() {
         List<EduTeacher> list = eduTeacherService.list(null);
-        int a = 10 / 0;
         return R.ok().data(list);
     }
 
