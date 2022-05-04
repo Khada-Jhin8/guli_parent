@@ -2,8 +2,8 @@ server:
   port: 8001
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
-  #      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
       logic-delete-value: 1
@@ -25,12 +25,13 @@ spring:
       pool-name: GuliHikariPool
 
   jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
+    date-format: yyyy-MM-dd
     time-zone: GMT+8
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
     static-path-pattern: static/**
+
 
 
 

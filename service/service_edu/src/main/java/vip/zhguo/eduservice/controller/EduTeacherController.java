@@ -27,7 +27,7 @@ import java.util.List;
 @SuppressWarnings("all")
 @CrossOrigin
 @RestController
-@RequestMapping("/eduservice/eduteacher")
+@RequestMapping("   ")
 @ApiModel("讲师类接口")
 public class EduTeacherController {
     @Autowired
@@ -57,7 +57,7 @@ public class EduTeacherController {
         return R.error();
     }
 
-    @PostMapping("/pageTeacher/{current}/{limit}")
+    @PostMapping("/{current}/{limit}")
     @ApiOperation("条件分页查询教师信息")
     public R getPageTeacher(@PathVariable long current,
                             @PathVariable long limit,
@@ -66,8 +66,9 @@ public class EduTeacherController {
         //封装查询条件
         LambdaQueryWrapper<EduTeacher> lqw = new LambdaQueryWrapper();
         lqw.like(eduTeacher.getName() != null, EduTeacher::getName, eduTeacher.getName());
-        lqw.like(eduTeacher.getLevel() != null, EduTeacher::getLevel, eduTeacher.getLevel());
-        lqw.like(eduTeacher.getGmtCreate() != null, EduTeacher::getGmtCreate, eduTeacher.getGmtCreate());
+        lqw.eq(eduTeacher.getLevel() != null, EduTeacher::getLevel, eduTeacher.getLevel());
+//        lqw.eq(eduTeacher.getGmtCreate() != null, EduTeacher::getGmtCreate, eduTeacher.getGmtCreate());
+        lqw.orderByDesc(EduTeacher::getGmtCreate);
         IPage<EduTeacher> page = eduTeacherService.page(eduTeachers, lqw);
         return R.ok().data(page);
     }
@@ -83,6 +84,7 @@ public class EduTeacherController {
     }
 
     @ApiOperation("修改教师")
+    @PutMapping
     public R updateTeacher(@RequestBody EduTeacher eduTeacher) {
         boolean flag = eduTeacherService.updateById(eduTeacher);
         if (flag)
