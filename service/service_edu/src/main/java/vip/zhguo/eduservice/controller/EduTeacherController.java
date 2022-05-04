@@ -27,7 +27,7 @@ import java.util.List;
 @SuppressWarnings("all")
 @CrossOrigin
 @RestController
-@RequestMapping("   ")
+@RequestMapping("/edu/teacher")
 @ApiModel("讲师类接口")
 public class EduTeacherController {
     @Autowired
