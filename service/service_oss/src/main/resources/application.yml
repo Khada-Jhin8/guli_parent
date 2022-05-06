@@ -1,0 +1,18 @@
+server:
+  port: 8002
+aliyun:
+  oss:
+    AccessKeyID: LTAI5tRG9ZrZLWyXpzqBDZfb
+    AccessKeySecret: WQnTFOKVoh1VomhZNzC5oK0TlUe7Lz
+    bucKetName: zhguo-oss
+    endpoint: oss-cn-shanghai.aliyuncs.com
+
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
