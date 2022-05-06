@@ -23,7 +23,8 @@ import java.util.UUID;
 @Service
 public class OssServiceImpl implements OssService {
     @Autowired
-    ConstantProperties constantProperties ;
+    ConstantProperties constantProperties;
+
     @Override
     public void upload(MultipartFile file) {
 
@@ -31,10 +32,12 @@ public class OssServiceImpl implements OssService {
                 constantProperties.getAccessKeyID(), constantProperties.getAccessKeySecret());
 
         try {
-//            InputStream inputStream = new FileInputStream(file);
+            String originalFilename = file.getOriginalFilename();
+//            获取后缀
+            String suffixName = originalFilename.substring(originalFilename.lastIndexOf("."));
             InputStream inputStream = file.getInputStream();
             // 创建PutObject请求。
-            ossClient.putObject(constantProperties.getBucKetName(), UUID.randomUUID()+"", inputStream);
+            ossClient.putObject(constantProperties.getBucKetName(), constantProperties.getFolderName()+UUID.randomUUID() + suffixName, inputStream);
         } catch (OSSException oe) {
             System.out.println("Caught an OSSException, which means your request made it to OSS, "
                     + "but was rejected with an error response for some reason.");
@@ -47,10 +50,9 @@ public class OssServiceImpl implements OssService {
                     + "a serious internal problem while trying to communicate with OSS, "
                     + "such as not being able to access the network.");
             System.out.println("Error Message:" + ce.getMessage());
-        } catch (IOException de){
+        } catch (IOException de) {
             de.printStackTrace();
-        }
-        finally {
+        } finally {
             if (ossClient != null) {
                 ossClient.shutdown();
             }

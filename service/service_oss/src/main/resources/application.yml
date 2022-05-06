@@ -2,11 +2,11 @@ server:
   port: 8002
 aliyun:
   oss:
-    AccessKeyID: LTAI5tRG9ZrZLWyXpzqBDZfb
-    AccessKeySecret: WQnTFOKVoh1VomhZNzC5oK0TlUe7Lz
+    AccessKeyID:
+    AccessKeySecret:
     bucKetName: zhguo-oss
     endpoint: oss-cn-shanghai.aliyuncs.com
-
+    folderName: avatar/
 spring:
   application:
     name: service-oss

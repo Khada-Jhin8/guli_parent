@@ -19,4 +19,5 @@ public class ConstantProperties {
     private String AccessKeySecret;
     private String bucKetName;
     private String endpoint;
+    private String folderName;
 }
