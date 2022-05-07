@@ -24,9 +24,10 @@ import java.util.UUID;
 public class OssServiceImpl implements OssService {
     @Autowired
     ConstantProperties constantProperties;
-
+    String ossFilePath ="";
+    String uploadFileName="";
     @Override
-    public void upload(MultipartFile file) {
+    public String upload(MultipartFile file) {
 
         OSS ossClient = new OSSClientBuilder().build(constantProperties.getEndpoint(),
                 constantProperties.getAccessKeyID(), constantProperties.getAccessKeySecret());
@@ -36,8 +37,9 @@ public class OssServiceImpl implements OssService {
 //            获取后缀
             String suffixName = originalFilename.substring(originalFilename.lastIndexOf("."));
             InputStream inputStream = file.getInputStream();
+             uploadFileName = constantProperties.getFolderName()+UUID.randomUUID() + suffixName;
             // 创建PutObject请求。
-            ossClient.putObject(constantProperties.getBucKetName(), constantProperties.getFolderName()+UUID.randomUUID() + suffixName, inputStream);
+            ossClient.putObject(constantProperties.getBucKetName(),uploadFileName , inputStream);
         } catch (OSSException oe) {
             System.out.println("Caught an OSSException, which means your request made it to OSS, "
                     + "but was rejected with an error response for some reason.");
@@ -53,9 +55,11 @@ public class OssServiceImpl implements OssService {
         } catch (IOException de) {
             de.printStackTrace();
         } finally {
+            ossFilePath = "https://"+constantProperties.getBucKetName()+"."+constantProperties.getEndpoint()+"/"+uploadFileName;
             if (ossClient != null) {
                 ossClient.shutdown();
             }
+            return ossFilePath;
         }
     }
 }

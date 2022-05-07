@@ -25,7 +25,7 @@ public class OssController {
 
     @PostMapping
     public R upload(MultipartFile file) {
-        ossService.upload(file);
-        return R.ok();
+        String uploadPath = ossService.upload(file);
+        return R.ok().data(uploadPath);
     }
 }

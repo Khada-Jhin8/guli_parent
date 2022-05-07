@@ -12,5 +12,5 @@ import java.io.File;
  * @createTime : [2022/5/6 15:21]
  */
 public interface OssService {
-    void upload(MultipartFile file);
+    String upload(MultipartFile file);
 }
