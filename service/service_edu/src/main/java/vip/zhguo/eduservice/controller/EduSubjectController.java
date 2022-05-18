@@ -2,6 +2,7 @@ package vip.zhguo.eduservice.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * @author zhenghg
  * @since 2022-05-18
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/edu/subject")
 public class EduSubjectController {

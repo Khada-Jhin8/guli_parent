@@ -15,6 +15,6 @@ import java.util.List;
 public class SubjectMenu {
     private String id;
     private String title;
-    private String parent_id;
+    private String parentId;
     private List children;
 }

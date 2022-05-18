@@ -24,6 +24,12 @@ spring:
       minimum-idle: 10
       pool-name: GuliHikariPool
 
+#热部署配置
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java/vip/zhguo
+
   jackson:
     date-format: yyyy-MM-dd
     time-zone: GMT+8
