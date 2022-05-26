@@ -1,10 +1,7 @@
 package vip.zhguo.eduservice.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.fasterxml.jackson.databind.util.BeanUtil;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.BEncoderStream;
+
 import org.springframework.beans.BeanUtils;
-import org.springframework.context.annotation.Bean;
 import vip.zhguo.eduservice.entity.EduSubject;
 import vip.zhguo.eduservice.mapper.EduSubjectMapper;
 import vip.zhguo.eduservice.service.EduSubjectService;
@@ -12,7 +9,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import vip.zhguo.eduservice.vo.SubjectMenu;
 
-import java.sql.Wrapper;
 import java.util.ArrayList;
 import java.util.List;
 

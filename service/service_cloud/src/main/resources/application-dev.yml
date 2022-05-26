@@ -1,0 +1,29 @@
+server:
+  port: 8003
+
+#热部署配置
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java/vip/zhguo
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#    static-path-pattern: static/**  #配置后无法访问swagger,不配置头像无法放行，后续优化
+
+spring:
+  application:
+    name: service-cloud
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+
+
+
+
+
+

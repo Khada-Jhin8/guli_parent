@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import vip.zhguo.commonutils.R;
 import vip.zhguo.eduservice.entity.EduTeacher;
 import vip.zhguo.eduservice.entity.vo.TeacherQuery;
+import vip.zhguo.eduservice.remote.CloudService;
 import vip.zhguo.eduservice.service.EduTeacherService;
 
 import java.util.List;
@@ -33,10 +34,16 @@ public class EduTeacherController {
     @Autowired
     EduTeacherService eduTeacherService;
 
+
+    @Autowired
+    CloudService cloudService;
+
     @GetMapping
     @ApiOperation("获取所有教师")
     public R getTeachers() {
         List<EduTeacher> list = eduTeacherService.list(null);
+        R r = cloudService.sayHello(12314);
+        System.out.println(r.getData());
         return R.ok().data(list);
     }
 
