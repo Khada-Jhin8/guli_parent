@@ -40,10 +40,14 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  redis:
+    host: xui.zhguo.vip
+    port: 6379
+    database: 0
+    timeout: 180000
 #    static-path-pattern: static/**  #配置后无法访问swagger,不配置头像无法放行，后续优化
 feign:
   hystrix:
     enabled: true
-
 
 
