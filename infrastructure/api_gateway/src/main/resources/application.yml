@@ -1,0 +1,34 @@
+#端口
+server:
+  port: 8888
+#服务名
+spring:
+  application:
+    name: getaway-server
+# nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#gateway启用
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          #设置路由
+          routes:
+            - id: service-edu
+              uri: lb://service-edu
+              predicates:
+                -path: /edu/**
+            - id: service-cloud
+              uri: lb://service-cloud
+              predicates:
+                -path: /hello/**
+            - id: service-oss
+              uri: lb://service-oss
+              predicates:
+                -path: /oss/**
+
+
+

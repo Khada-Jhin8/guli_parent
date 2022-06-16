@@ -1,4 +1,9 @@
 spring:
   profiles:
     active: dev
+  application:
+    name: service-cloud
+server:
+  port: 8003
+
 
