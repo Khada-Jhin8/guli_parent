@@ -1,4 +1,4 @@
-
+spring:
 #热部署配置
   devtools:
     restart:
@@ -10,7 +10,7 @@
       matching-strategy: ant_path_matcher
 #    static-path-pattern: static/**  #配置后无法访问swagger,不配置头像无法放行，后续优化
 
-spring:
+
   cloud:
     nacos:
       discovery:

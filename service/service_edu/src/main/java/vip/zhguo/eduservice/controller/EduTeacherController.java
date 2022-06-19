@@ -9,7 +9,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.web.bind.annotation.*;
 import vip.zhguo.commonutils.R;
 import vip.zhguo.eduservice.entity.EduTeacher;
@@ -40,11 +40,7 @@ public class EduTeacherController {
     @Autowired
     CloudService cloudService;
 
-
-    @Autowired
-    RedisTemplate redisTemplate;
-
-    @Cacheable(key = "'hello'", value = "teacher")
+    @Cacheable(value = "zhguo",key = "'hello'")
     @GetMapping
     @ApiOperation("获取所有教师")
     public R getTeachers() {
@@ -104,12 +100,6 @@ public class EduTeacherController {
         if (flag)
             return R.ok();
         return R.error();
-    }
-
-    @GetMapping("/redis")
-    public R redis() {
-        redisTemplate.opsForValue().set("zhenghg", "hello");
-        return R.ok();
     }
 
 }
